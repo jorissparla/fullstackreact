@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  console.log('Params', req.query.p);
-  res.send({ app: 'there' });
+  const p = req.query.p || 'Buddy';
+  res.send({ app: `there ${p}` });
 });
 
 const PORT = process.env.PORT || 4444;
